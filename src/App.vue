@@ -42,6 +42,7 @@ export default {
 					<ProjectCard
 						:title="project.title"
 						:description="project.description"
+						:id="project.id"
 					/>
 				</div>
 			</div>

@@ -1,7 +1,7 @@
 <script>
 export default {
 	name: "ProjectCard",
-	props: ["title", "description"],
+	props: ["title", "description", "id"],
 	data() {
 		return {};
 	},
@@ -9,8 +9,12 @@ export default {
 </script>
 
 <template>
-	<div>
-		<h1>{{ title }}</h1>
-		<p>{{ description }}</p>
+	<div class="card">
+		<div class="card-header">{{ id }}</div>
+		<div class="card-body">
+			<h5 class="card-title">{{ title }}</h5>
+			<p class="card-text">{{ description }}.</p>
+			<a href="#" class="btn btn-primary">Dettaglio</a>
+		</div>
 	</div>
 </template>
