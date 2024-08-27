@@ -1,7 +1,7 @@
 <script>
 export default {
 	name: "ProjectCard",
-	props: ["title", "description", "id"],
+	props: ["project"],
 	data() {
 		return {};
 	},
@@ -10,11 +10,17 @@ export default {
 
 <template>
 	<div class="card">
-		<div class="card-header">{{ id }}</div>
+		<div class="card-header">{{ project.id }}</div>
 		<div class="card-body">
-			<h5 class="card-title">{{ title }}</h5>
-			<p class="card-text">{{ description }}.</p>
-			<a href="#" class="btn btn-primary">Dettaglio</a>
+			<h5 class="card-title">{{ project.title }}</h5>
+			<p class="card-text">{{ project.description }}.</p>
+			<router-link
+				:to="{ name: 'detail', params: { id: project.id } }"
+				class="btn btn-outline-primary"
+			>
+				Dettagli
+			</router-link>
+			<!-- <a href="#" class="btn btn-primary">Dettaglio</a> -->
 		</div>
 	</div>
 </template>
